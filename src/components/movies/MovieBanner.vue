@@ -3,6 +3,8 @@ import axios from 'axios'
 import { ref, onMounted, onUnmounted } from 'vue'
 import request from '../../request'
 import Navbar from '../Navbar.vue'
+// @ts-ignore
+import Play  from  '../../assets/netflix-logo-png-2584.png'
 //   import LoadingGif from "./LoadingGif.vue";
 interface Movie {
     backdrop_path: string
@@ -46,11 +48,11 @@ onUnmounted(() => {
         }">
             <Navbar>
                 <template #movieBanner>
-                    <img src="../assets/netflix-logo-png-2584.png" alt="" class="w-32 object-contain" />
+                    <img :src="Play" alt="" class="w-32 object-contain" />
 
                     <ul>
                         <li>
-                            <router-link :to="{ name: 'popularMovies' }"
+                            <router-link :to="'/'"
                                 class="text-white uppercase hover:bg-red-600 rounded-sm text-xs lg:text-md px-2 md:px-3 py-2 bg-red-700">
                                 Popular Movies</router-link>
                         </li>

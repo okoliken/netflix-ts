@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.carousel__slide {
+    padding: 5px;
+  }
+  
+  .carousel__viewport {
+    perspective: 2500px;
+  }
+  
+  .carousel__track {
+    transform-style: preserve-3d;
+  }
+  
+  .carousel__slide--sliding {
+    transition: 0.5s;
+  }
+  
+  .carousel__slide {
+    opacity: 0.9;
+    transform: rotateY(-20deg) scale(0.9);
+  }
+  
+  .carousel__slide--active ~ .carousel__slide {
+    transform: rotateY(20deg) scale(0.9);
+  }
+  
+  .carousel__slide--prev {
+    opacity: 1;
+    transform: rotateY(-10deg) scale(0.95);
+  }
+  
+  .carousel__slide--next {
+    opacity: 1;
+    transform: rotateY(10deg) scale(0.95);
+  }
+  
+  .carousel__slide--active {
+    transition: 0.5s;
+    opacity: 1;
+    transform: rotateY(0) scale(1.1);
+  }
+  
+  .play-overlay {
+    display: none;
+  }
+  
+  .hover--show__overlay:hover .play-overlay {
+    display: block;
+  }
+  
+
+.carousel__prev,
+.carousel__next {
+  background-color: #b91c1c !important;
+  border-radius: 50% !important;
+  color: #fff !important;
+}
