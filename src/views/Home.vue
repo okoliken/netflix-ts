@@ -7,12 +7,12 @@ import requests from "../request";
 import MovieTrailer from "../components/movies/MovieTrailer.vue";
 // @ts-ignore
 import Loading from "../components/movies/Loading.vue";
-import Spinner from "../components/spinner.vue"
+// import Spinner from "../components/spinner.vue"
 </script>
 
 <template>
   <MovieBanner />
-  <Spinner />
+  <!-- <Spinner /> -->
   <div
     v-if="loading"
     class="w-full h-full fixed z-50 top-0 bg-black bg-opacity-60 flex items-center justify-center flex-col space-y-5"
