@@ -22,27 +22,27 @@
   
   .carousel__slide {
     opacity: 0.9;
-    transform: rotateY(-20deg) scale(0.9);
+    transform: rotateY(-20deg) scale(0.9) !important;
   }
   
   .carousel__slide--active ~ .carousel__slide {
-    transform: rotateY(20deg) scale(0.9);
+    transform: rotateY(20deg) scale(0.9) !important;
   }
   
   .carousel__slide--prev {
     opacity: 1;
-    transform: rotateY(-10deg) scale(0.95);
+    transform: rotateY(-10deg) scale(0.95) !important;
   }
   
   .carousel__slide--next {
     opacity: 1;
-    transform: rotateY(10deg) scale(0.95);
+    transform: rotateY(10deg) scale(0.95) !important;
   }
   
   .carousel__slide--active {
     transition: 0.5s;
     opacity: 1;
-    transform: rotateY(0) scale(1.1);
+    transform: rotateY(0) scale(1.1) !important;
   }
   
   .play-overlay {
@@ -50,7 +50,7 @@
   }
   
   .hover--show__overlay:hover .play-overlay {
-    display: block;
+    display: flex;
   }
   
 

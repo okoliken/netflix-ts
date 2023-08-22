@@ -1,41 +1,26 @@
 <script setup lang="ts">
 import axios from 'axios'
-
-import { ref, reactive, onMounted } from 'vue'
-
+import { ref } from 'vue'
 import MoviePoster from './MoviePoster.vue'
-
+import { useQuery } from "vue-query";
 const { title, requests } = defineProps(['title', 'requests'])
 
-const tmdbMovie = ref<any>([])
-
-const errMessage = ref('')
-
 const fetchTmdbMovies = async () => {
-  try {
     const res = await axios.get(requests)
-
-
-
-    tmdbMovie.value = res.data
-    return res
-  } catch (error) {
-    errMessage.value = `No ${title} available... check your Internet Connection.`
-  }
+    return res.data?.results
 }
 
+const  { data } = useQuery(title, fetchTmdbMovies)
 
-onMounted(async()=> {
-await fetchTmdbMovies()
-})
+
 </script>
-
+ 
 <template>
   <p class="text-white font-semibold px-4 md:px-2 leading-5 text-2xl md:text-2xl pt-5">
     {{ title }}
   </p>
   <div class="py-5 px-4 md:px-2">
-    <MoviePoster :movie="tmdbMovie.results" />
+    <MoviePoster :movie="data" />
   </div>
 </template>
 
