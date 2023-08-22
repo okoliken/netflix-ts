@@ -34,21 +34,3 @@ export const getMovieData = async () => {
     state.isLoading = false
   }
 }
-export const getMovieDetails = async () => {
-  const apiKey = "k_1fnld2bu";
-
-  try {
-    state.isLoading = true
-    const res = await axios.get(
-      `https://imdb-api.com/en/API/Title/${apiKey}/${id}/FullActor,FullCast,Posters,Images,Trailer,Ratings,Wikipedia`
-    );
-
-    const data = res.data
-
-
-    state.movieDetails = data
-    state.isLoading = false
-  } catch (error) {
-    state.isLoading = false
-  }
-}

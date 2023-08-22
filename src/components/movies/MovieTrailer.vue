@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 import YouTube from "vue3-youtube";
 import ModalLogo from "../ModalLogo.vue";
 import { ref, computed } from "vue";
@@ -73,4 +73,11 @@ const errorWhileTryingTOPlay = () => {
     </div>
   </Teleport>
 </template>
-  
+   -->
+
+
+   <template>
+    <div>
+      hello
+    </div>
+   </template>
