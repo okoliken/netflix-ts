@@ -6,7 +6,7 @@ import MovieBanner from "../components/movies/MovieBanner.vue";
 import requests from "../request";
 import MovieTrailer from "../components/movies/MovieTrailer.vue";
 // @ts-ignore
-import Loading from "../components/movies/Loading.vue";
+
 // import Spinner from "../components/spinner.vue"
 </script>
 
