@@ -29,5 +29,5 @@ export const getMovieTrailer = async (id:string) => {
     state.ShowTrailerModal = true
     const data = res.data
 
-    return data
+    state.trailers = data?.results
 }

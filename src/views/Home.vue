@@ -15,6 +15,7 @@ import Spinner from '../components/spinner.vue'
   <Spinner v-if="loading"/>
 
   <div class="container mx-auto">
+    <!-- <MovieRow title="Now Playing" :requests="requests.fetchingNowPlaying" /> -->
     <MovieRow title="NETFLIX ORIGINALS" :requests="requests.fetchNetflixOriginals" />
     <MovieRow title="Trending Now" :requests="requests.fetchingTrending" />
     <MovieRow title="Top Rated" :requests="requests.fetchTopRated" />
