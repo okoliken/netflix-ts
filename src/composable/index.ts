@@ -1,36 +1,33 @@
 import { reactive, computed } from 'vue'
 import axios from "axios";
+import request from '@/request'; 
 
 export const state = reactive({
-  popularMovies: [],
-  movieDetails: [],
   isLoading: false,
   ShowTrailerModal: false,
   trailers: []
 })
 
 
-export const movieData = computed(() => state.popularMovies)
-export const movieDetails = computed(() => state.movieDetails)
+
 export const loading = computed(() => state.isLoading)
 
 
-export const getMovieData = async () => {
-  try {
-    const apiKey = "k_1fnld2bu";
-    // commit("isLoading", true);
+export const fetchTmdbMovies = async (requests:string) => {
+  state.isLoading = true
+  const res = await axios.get(requests)
+  state.isLoading = false
+  return res.data?.results
+}
+
+export const getMovieTrailer = async (id:string) => {
     state.isLoading = true
     const res = await axios.get(
-      `https://imdb-api.com/en/API/MostPopularMovies/${apiKey}`
+      `${request.fetchVideos(id)}`
     );
-
+    state.isLoading = false
+    state.ShowTrailerModal = true
     const data = res.data
 
-    state.popularMovies = data
-
-    state.isLoading = false
-  } catch (error) {
-
-    state.isLoading = false
-  }
+    return data
 }
