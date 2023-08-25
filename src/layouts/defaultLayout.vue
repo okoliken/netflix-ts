@@ -5,17 +5,7 @@ import Navbar from '../components/Navbar.vue'
 import Play from '../assets/netflix-logo-png-2584.png'
 const isSticky = ref(false)
 
-onMounted(()=> {
-    window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-      isSticky.value = true
-    } else isSticky.value = false
-  })
-})
 
-onUnmounted(() => {
-  window.removeEventListener('scroll', () => (isSticky.value = false))
-})
 </script>
 
 <template>
