@@ -32,9 +32,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="absolute w-full" style="z-index: 1">
 
-  </div>
   <div
     v-if="randomBannerMovieImage"
     :style="`background-image:linear-gradient( rgba(0,0,0,.3),rgba(0,0,0,.3)),url(${base_url}${randomBannerMovieImage?.backdrop_path})`"

@@ -43,7 +43,7 @@ const errorWhileTryingTOPlay = () => {
 <template>
   <Teleport to="body">
     <div class="bg-black bg-opacity-50  fixed top-0 h-screen z-50 w-full flex items-center justify-center transition-all duration-100 ease-in-out">
-      <div class="bg-black bg-opacity-90 w-full max-w-xl h-screen lg:h-[80vh] py-4 px-8 rounded-lg">
+      <div class="bg-black bg-opacity-90 w-full max-w-xl h-screen lg:h-[80vh] overfl py-4 px-8 rounded-lg">
         <ModalLogo @close="state.ShowTrailerModal = false" />
         <template v-if="getRandomTrailer !== null">
           <div>

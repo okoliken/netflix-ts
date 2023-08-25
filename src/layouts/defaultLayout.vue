@@ -19,11 +19,10 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div>
+  <div class="relative">
     <header
-      :class="{
-        'bg-black w-full fixed bg-opacity-90 transition-all duration-300 ease-in': isSticky
-      }"
+    class="absolute w-full z-[9999999]"
+     
     >
       <Navbar>
         <template #movieBanner>
