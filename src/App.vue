@@ -1,13 +1,16 @@
+<script lang="ts" setup>
+import RootLayout from './layouts/rootLayout.vue'
+</script>
+
 <template>
-  <router-view />
+  <RootLayout>
+     <router-view />
+  </RootLayout> 
 </template>
 
 
 <style>
-body {
-  background-color: #111;
-  font-family: "Zen Kaku Gothic Antique" !important;
-}
+
 body::-webkit-scrollbar {
   display: block;
   background-color: #333;

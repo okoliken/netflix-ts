@@ -1,18 +1,22 @@
 <script setup lang="ts">
-
-import  { loading, state } from '../composable/index'
-import MovieRow from "../components/movies/MovieRow.vue";
-import MovieBanner from "../components/movies/MovieBanner.vue";
-import requests from "../request";
-import MovieTrailer from "../components/movies/MovieTrailer.vue";
+// @ts-ignore
+// import { useModal } from 'vue-modally-v3'
+import { loading, state } from '../composable/index'
+import MovieRow from '../components/movies/MovieRow.vue'
+import MovieBanner from '../components/movies/MovieBanner.vue'
+import requests from '../request'
+import MovieTrailer from '../components/movies/MovieTrailer.vue'
 // @ts-ignore
 
 import Spinner from '../components/spinner.vue'
+
+
+
 </script>
 
 <template>
   <MovieBanner />
-  <Spinner v-if="loading"/>
+  <Spinner v-if="loading" />
 
   <div class="container mx-auto">
     <!-- <MovieRow title="Now Playing" :requests="requests.fetchingNowPlaying" /> -->
@@ -25,11 +29,9 @@ import Spinner from '../components/spinner.vue'
     <MovieRow title="Romantic Movies" :requests="requests.fetchRomanceMovies" />
     <MovieRow title="Documentaries" :requests="requests.fetchDocumentaries" />
 
-    <transition name="slide-up">
+    <transition  name="slide-up">
       <MovieTrailer v-if="state.ShowTrailerModal" />
     </transition>
-
-   
   </div>
 </template>
 

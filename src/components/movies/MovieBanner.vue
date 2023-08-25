@@ -2,9 +2,9 @@
 import axios from 'axios'
 import { ref, onMounted, onUnmounted } from 'vue'
 import request from '../../request'
-import Navbar from '../Navbar.vue'
+
 // @ts-ignore
-import Play from '../../assets/netflix-logo-png-2584.png'
+
 //   import LoadingGif from "./LoadingGif.vue";
 interface Movie {
   backdrop_path: string
@@ -28,43 +28,12 @@ const getRandomBannerMovieImage = async () => {
 
 onMounted(async () => {
   await getRandomBannerMovieImage()
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-      isSticky.value = true
-    } else isSticky.value = false
-  })
-})
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', () => (isSticky.value = false))
 })
 </script>
 
 <template>
   <div class="absolute w-full" style="z-index: 1">
-    <header
-      :class="{
-        'bg-black w-full fixed bg-opacity-90 transition-all duration-300 ease-in': isSticky
-      }"
-    >
-      <Navbar>
-        <template #movieBanner>
-          <img :src="Play" alt="" class="w-32 object-contain" />
 
-          <ul>
-            <li>
-              <router-link
-                :to="'/'"
-                class="text-white uppercase hover:bg-red-600 rounded-sm text-xs lg:text-md px-2 md:px-3 py-2 bg-red-700"
-              >
-                Popular Movies</router-link
-              >
-            </li>
-          </ul>
-        </template>
-      </Navbar>
-    </header>
   </div>
   <div
     v-if="randomBannerMovieImage"
