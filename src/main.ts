@@ -4,7 +4,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import YouTube from 'vue3-youtube'
-import VueModally from 'vue-modally-v3'
+
 // @ts-ignore
 import VLazyImage from "v-lazy-image";
 import { VueQueryPlugin, type VueQueryPluginOptions } from "vue-query";
@@ -24,7 +24,6 @@ const vueQueryPluginOptions: VueQueryPluginOptions = {
 
 
 app.use(router)
-app.use(VueModally, {})
 app.component('YouTube', YouTube)
 app.component('v-lazy-image', VLazyImage)
 app.use(VueQueryPlugin, vueQueryPluginOptions);
