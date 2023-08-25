@@ -17,7 +17,7 @@ const router = createRouter({
       path:'/auth/login',
       name:'Login',
       // @ts-ignore
-      component: () => import('../views/login.vue'),
+      component: () => import('../views/Login.vue'),
       meta:{
         layout:'authLayout'
       }
