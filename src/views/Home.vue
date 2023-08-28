@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // @ts-ignore
-// import { useModal } from 'vue-modally-v3'
+
 import { loading, state } from '../composable/index'
 import MovieRow from '../components/movies/MovieRow.vue'
 import MovieBanner from '../components/movies/MovieBanner.vue'

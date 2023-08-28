@@ -21,8 +21,27 @@ const router = createRouter({
       meta:{
         layout:'authLayout'
       }
-    }
+    },
+    {
+      path:'/auth/sign-up',
+      name:'Signup',
+      // @ts-ignore
+      component: () => import('../views/Signup.vue'),
+      meta:{
+        layout:'authLayout'
+      }
+    },
   ]
+})
+
+router.beforeEach((to,from,next) => {
+  if(to.matched.some((routes) => routes.meta.requiresAuth)){
+      let user  = JSON.parse(String(sessionStorage.getItem('user')))
+      if(!user){
+        next('/auth/login')
+      }
+  }
+  next()
 })
 
 export default router
