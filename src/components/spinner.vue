@@ -10,8 +10,8 @@
 
 <style>
 .loader {
-  width: 68px;
-  height: 68px;
+  width: 68px !important;
+  height: 68px !important;
   border-radius: 50%;
   border-top: 3px solid #8f1e1a !important;
   border-right: 3px solid transparent;
