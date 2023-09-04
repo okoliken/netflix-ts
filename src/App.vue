@@ -1,12 +1,22 @@
 <script lang="ts" setup>
 import RootLayout from './layouts/rootLayout.vue'
-// @import "~@marcoschulte/vue3-progress/dist/";
 
-import { useProgress } from '@marcoschulte/vue3-progress';
+import { ProgressFinisher, useProgress } from '@marcoschulte/vue3-progress';
+import { useRouter } from 'vue-router'
+const progresses = [] as ProgressFinisher[];
+const router = useRouter()
 
-// via useProgress()
-const progress = useProgress().start();
-progress.finish();
+router.beforeEach((to, from, next) => {
+  progresses.push(useProgress().start());
+
+  next()
+})
+
+router.afterEach(() => {
+  progresses.pop()?.finish();
+})
+
+
 
 </script>
 
@@ -38,4 +48,5 @@ body::-webkit-scrollbar-thumb {
 .my-custom-class {
   background-color: #b91c1c;
   color: #fff;
-}</style>
+}
+</style>

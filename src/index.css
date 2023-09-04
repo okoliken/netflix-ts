@@ -1,7 +1,13 @@
+@import '@marcoschulte/vue3-progress/dist/index.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
+.vue3-progress-bar {
+  height: 5px !important;
+  background-color: hsl(0, 74%, 42%)  !important;
+}
 
 
 .poster {

@@ -13,7 +13,7 @@
   width: 68px;
   height: 68px;
   border-radius: 50%;
-  border-top: 3px solid #8f1e1a;
+  border-top: 3px solid #8f1e1a !important;
   border-right: 3px solid transparent;
   box-sizing: border-box;
   animation: rotation 0.90s linear infinite;
