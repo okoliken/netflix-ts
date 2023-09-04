@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import RootLayout from './layouts/rootLayout.vue'
 
-import { ProgressFinisher, useProgress } from '@marcoschulte/vue3-progress';
+import {  type ProgressFinisher, useProgress } from '@marcoschulte/vue3-progress';
 import { useRouter } from 'vue-router'
 const progresses = [] as ProgressFinisher[];
 const router = useRouter()
