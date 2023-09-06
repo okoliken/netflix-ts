@@ -34,10 +34,15 @@ const iconType = computed(() => {
         </Button>
 
         <div class="mt-16 text-center">
-          <p class="!font-light text-[#737373] text-[16px]">New to Netflix?
+          <p class="!font-light text-[#737373] text-[16px]">I don’t have an account.
             <router-link to="/auth/sign-up">
-              <span class="text-white hover:underline">Sign Up Now</span>
+              <span class="text-white hover:underline">Sign Up</span>
             </router-link>
+          </p>
+
+
+          <p class="text-center mt-7 text-[#737373] text-xs">
+            This endeavor aimed to replicate the beloved features of the popular streaming platform, while also adding some unique touches.
           </p>
         </div>
       </form>

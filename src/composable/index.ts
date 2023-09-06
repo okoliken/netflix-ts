@@ -1,7 +1,7 @@
 import { reactive, computed } from 'vue'
-import axios from "axios";
+// import axios from "axios";
 import request from '@/request'; 
-
+import {api} from '../axios' 
 export const state = reactive({
   isLoading: false,
   ShowTrailerModal: false,
@@ -14,19 +14,19 @@ export const loading = computed(() => state.isLoading)
 
 
 export const fetchTmdbMovies = async (requests:string) => {
-  state.isLoading = true
-  const res = await axios.get(requests)
-  state.isLoading = false
+  const res = await api.get(requests)
+
   return res.data?.results
 }
 
 export const getMovieTrailer = async (id:string) => {
-    state.isLoading = true
-    const res = await axios.get(
+
+    const res = await api.get(
       `${request.fetchVideos(id)}`
     );
-    state.isLoading = false
+
     state.ShowTrailerModal = true
+    document.body.style.overflow = 'hidden'
     const data = res.data
 
     state.trailers = data?.results

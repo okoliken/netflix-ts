@@ -13,7 +13,7 @@ const { loading } = defineProps(['loading'])
   </div>
 </template>
 
-<style>
+<style scoped>
 .loader {
   width: 28px;
   height: 28px;

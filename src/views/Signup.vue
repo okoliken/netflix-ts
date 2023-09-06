@@ -43,6 +43,10 @@ const iconType = computed(() => {
               <span class="text-white hover:underline">Sign In</span>
             </router-link>
           </p>
+
+          <p class="text-center mt-7 text-[#737373] text-xs">
+            This endeavor aimed to replicate the beloved features of the popular streaming platform, while also adding some unique touches.
+          </p>
         </div>
       </form>
     </div>

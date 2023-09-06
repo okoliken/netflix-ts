@@ -8,7 +8,7 @@
 </template>
 
 
-<style>
+<style scoped>
 .loader {
   width: 68px !important;
   height: 68px !important;

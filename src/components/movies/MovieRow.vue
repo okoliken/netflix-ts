@@ -1,15 +1,17 @@
 <script setup lang="ts">
-import axios from 'axios'
-
+import {watch} from 'vue'
 import MoviePoster from './MoviePoster.vue'
 import { useQuery } from "vue-query";
-import  {fetchTmdbMovies} from '../../composable/index'
+import  {fetchTmdbMovies, state} from '../../composable/index'
 const { title, requests } = defineProps(['title', 'requests'])
 
 
 
-const  { data } = useQuery(title,()=> fetchTmdbMovies(requests))
+const  { data, isLoading, isFetching } = useQuery(title,() => fetchTmdbMovies(requests))
 
+watch(isLoading,() => {
+ return state.isLoading = isFetching.value
+})
 
 </script>
  

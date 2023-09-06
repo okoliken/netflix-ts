@@ -38,13 +38,18 @@ const errorWhileTryingTOPlay = () => {
   alert("An error occurred while trying to get movie trailer");
 };
 
+const handleClose = () => {
+  document.body.style.overflow = 'auto'
+  state.ShowTrailerModal = false
+}
+
 </script>
 
 <template>
   <Teleport to="body">
-    <div class="bg-black bg-opacity-90  fixed top-0 h-screen z-50 w-full flex items-center justify-center transition-all duration-100 ease-in-out">
+    <div class="bg-black bg-opacity-90  fixed top-0 h-screen z-50 w-full flex items-center justify-center transition-all duration-100 ease-in-out overflow-auto">
       <div class="bg-black bg-opacity-80 w-full max-w-xl h-screen lg:h-[80vh] overfl py-4 px-8 rounded-lg">
-        <ModalLogo @close="state.ShowTrailerModal = false" />
+        <ModalLogo @close="handleClose" />
         <template v-if="getRandomTrailer !== null">
           <div>
             <h2 class="text-white text-xl font-medium my-3">

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import axios from 'axios'
+import {api} from '../../axios' 
 import { ref, onMounted, onUnmounted } from 'vue'
 import request from '../../request'
 
@@ -17,7 +17,7 @@ const randomBannerMovieImage = ref<Movie>()
 const base_url = 'https://image.tmdb.org/t/p/original'
 const getRandomBannerMovieImage = async () => {
   try {
-    const res = await axios.get(request.fetchNetflixOriginals)
+    const res = await api.get(request.fetchNetflixOriginals)
     randomBannerMovieImage.value =
       res.data.results[Math.floor(Math.random() * res.data.results.length - 1)]
     return res
@@ -54,7 +54,8 @@ onMounted(async () => {
 <style scoped>
 .banner-img {
   width: 100%;
-  height: 400px;
+  min-height: 400px;
+  background: #000;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -63,7 +64,7 @@ onMounted(async () => {
 .dark-bottom {
   height: 5.3rem;
   position: absolute;
-  bottom: 0;
+  bottom: 5%;
   background-image: linear-gradient(180deg, transparent, rgba(37, 37, 37, 0.61), #111);
 }
 </style>
